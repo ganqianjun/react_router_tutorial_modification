@@ -1,12 +1,15 @@
 import React from 'react'
 import { render } from 'react-dom'
-import { Router, Route, hashHistory } from 'react-router'
+import { Router, Route, browserHistory } from 'react-router'
 import App from './modules/App'
 import About from './modules/About'
 import Repos from './modules/Repos'
 
+// browserHistory: http://domain/browserHistory-care-about
+// hashHistory: http://domain/#/hashHistory-care-about
+// hashHistory will have a '#' in url
 render((
-  <Router history={hashHistory}>
+  <Router history={browserHistory}>
     <Route path="/" component={App}/>
     <Route path="/repos" component={Repos}/>
     <Route path="/about" component={About}/>
